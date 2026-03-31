@@ -1,175 +1,78 @@
 # CrossFit Open Performance Case Study
 
-This project combines personal workout history from SugarWOD with CrossFit Open leaderboard results and published Open workout definitions to answer a practical training question:
+This project combines SugarWOD training history, CrossFit Open leaderboard results, and Open workout definitions to analyze which training patterns appear to support stronger Open performances and where targeted improvements are needed.
+For the full write-up, see [CASE_STUDY.md](CASE_STUDY.md).
+## Problem
 
-**What training patterns appear to support better Open performances, what patterns show up in weaker performances, and how should training change before next season's Open?**
+I wanted to understand whether my training before each CrossFit Open aligned with the demands of the workouts I performed well or poorly in.
 
-This repo is designed as a portfolio example that shows end-to-end analytics value:
-- ingesting messy workout data
-- engineering features from semi-structured text
-- linking training inputs to competition outcomes
-- telling a business-style story with a concrete action plan
+The goal was not just to review past results, but to turn the analysis into a practical training plan for the next Open season.
 
-## Project summary
+## Data Sources
 
-Three datasets were combined:
+### SugarWOD workout history
+- Source: exported personal workout logs
+- Use: measure training volume, movement exposure, and prep patterns
 
-1. **SugarWOD training history**
-   - 1,395 logged workout results
-   - used to measure movement exposure, training volume, and prep patterns
+### CrossFit Open leaderboard results
+- Source: collected leaderboard results by year and event
+- Use: yearly and event-level performance outcomes
 
-2. **CrossFit Open leaderboard history**
-   - yearly results from 2018 and 2020-2026
-   - used as the outcome metric
+### CrossFit Open workout definitions
+- Source: collected Open workout descriptions by year
+- Use: identify movement demands and compare them to prior training exposure
 
-3. **CrossFit Open workout definitions**
-   - Open event descriptions from 2019-2026
-   - used to classify workout demands and compare them to pre-Open training exposure
+## Approach
 
-## Core question
+This project followed four main steps:
 
-The central analytical question was:
+1. Pulled and cleaned SugarWOD training data
+2. Pulled and structured CrossFit Open leaderboard and workout data
+3. Engineered movement and event-fit features
+4. Compared pre-Open training exposure to Open event outcomes
 
-> Did the athlete's training volume and movement exposure before each Open align with the movement demands of the Open workouts they eventually performed well or poorly in?
+## Analytics Performed
 
-## Key findings
+The analysis focused on:
+- year-over-year Open finish trends
+- best and worst event finishes relative to yearly rank
+- movement exposure in the pre-Open training window
+- event-fit scoring based on how closely prior training matched Open workout demands
+- movement and bucket-level relationship checks to identify patterns that transferred well and patterns that did not
 
-### 1. Overall Open performance has a usable trend
-The athlete's best finish in this dataset was 2021, followed by a decline in 2024 and a rebound in 2025.
+## Key Findings
 
-![Overall rank trend](images/01_overall_rank_trend.png)
+- Overall training volume alone did not explain Open performance well
+- Better finishes tended to align with rowing, cyclical engine, hinge-dominant work, and gymnastics pulling
+- Worse finishes tended to align with wall walks, inversion, snatch-heavy conditioning, and burpee-to-implement transitions
+- The strongest signal was not raw movement exposure, but how transferable that exposure was to Open-style fatigue and combinations
 
-### 2. Best and worst event results cluster around specific movement patterns
-Stronger event finishes tended to involve:
-- rowing and cyclical engine
-- hinge-dominant work
-- gymnastics pulling
-- mixed pieces where pacing matters
+## Training Recommendations
 
-Weaker event finishes tended to involve:
-- wall walks and inversion
-- snatch-heavy conditioning
-- burpee + implement transitions
-- shoulder-intensive movement under fatigue
-
-![Best and worst Open event deltas](images/02_best_worst_event_deltas.png)
-
-### 3. More volume alone does not explain performance well
-A simple "more movement exposure equals better performance" story was not strong enough by itself.
-
-A better explanation is **transferable specificity**:
-- whether the athlete trained the movement
-- whether the athlete trained it in the same combinations
-- whether it was trained under the same kind of fatigue and time pressure
-
-![Event fit vs performance](images/03_event_fit_vs_performance.png)
-
-### 4. The practical recommendation
-The athlete's engine and pulling capacity appear to transfer well to competition.
-
-The clearest opportunities are:
-- wall walk / inversion under fatigue
+Based on the analysis, the highest-priority development areas are:
+- wall walk and inversion work under fatigue
 - snatch cycling in conditioning
 - thruster and clean receiving under fatigue
-- burpee-to-implement transitions
+- burpee-to-barbell and burpee-to-dumbbell transitions
 - squat-based movement under breathing and shoulder disruption
 
-![Movement exposure correlations](images/04_movement_exposure_correlations.png)
+Suggested annual structure:
+- April to August: base-building
+- September to November: weakness-biased development
+- December to January: Open-specific conversion
+- February to March: competition sharpening
 
-## Repo structure
+## Repo Structure
 
 ```text
 crossfit-open-performance-case-study/
-├── README.md
-├── requirements.txt
+├── ingestion/
 ├── data/
 │   ├── raw/
 │   └── derived/
 ├── images/
 ├── notebooks/
-│   ├── 01_data_prep.ipynb
-│   ├── 02_analysis.ipynb
-│   └── 03_training_plan.ipynb
 ├── src/
-│   ├── config.py
-│   ├── movement_tags.py
-│   ├── analysis_helpers.py
-│   └── build_derived_tables.py
-└── sql/
-    └── analysis_queries.sql
-```
-
-## How to run
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python src/build_derived_tables.py
-```
-
-Then open the notebooks to review the analysis and charts.
-
-## Analytical approach
-
-### Step 1: Normalize raw data
-- parse dates
-- standardize Open year and workout identifiers
-- align yearly results with event-level results
-- clean workout text from SugarWOD
-
-### Step 2: Feature engineering
-- tag SugarWOD workouts with movement keywords
-- derive movement buckets such as:
-  - hinge
-  - squat
-  - gymnastics pulling
-  - inversion
-  - monostructural engine
-- classify Open workouts by demand profile
-- generate prep windows before each Open
-
-### Step 3: Event-fit analysis
-For each Open event:
-- measure how much of the athlete's recent training touched those movements
-- compute a simple event fit score
-- compare event result against yearly finish
-
-### Step 4: Translate findings into training recommendations
-Use the strongest and weakest event patterns to define:
-- what to keep building
-- what to target directly
-- how to structure the next training year
-
-## Interview talking points
-
-This project is useful in interviews because it demonstrates:
-- messy data ingestion and cleaning
-- feature engineering from text
-- joining multiple sources at different grains
-- exploratory analytics with limited sample sizes
-- clear storytelling from data to recommendation
-
-A concise way to describe it:
-
-> I combined personal SugarWOD history with CrossFit Open leaderboard data and Open workout definitions to evaluate how well training exposure matched competition demands. The key finding was that raw training volume alone was not enough - transferable specificity mattered more. I used that analysis to recommend a targeted training approach for the next Open season.
-
-## Caveats
-
-This is a proof of concept, not a fully validated causal model.
-
-Current limitations:
-- movement tagging is keyword-based
-- workout time-domain estimates are heuristic
-- sample size is small at the event level
-- training transfer is inferred, not experimentally verified
-
-Those limitations are acceptable for a portfolio case study as long as they are stated clearly.
-
-## Next improvements
-
-- parse workout text more precisely for rep counts and loads
-- classify movement combinations, not only single movement tags
-- add a dashboard layer
-- formalize the transformations in dbt
-- add automated tests for feature generation
+├── sql/
+├── README.md
+└── CASE_STUDY.md
