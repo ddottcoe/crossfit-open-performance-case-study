@@ -1,7 +1,7 @@
 # CrossFit Open Performance Case Study
 
 This project combines SugarWOD training history, CrossFit Open leaderboard results, and Open workout definitions to analyze which training patterns appear to support stronger Open performances and where targeted improvements are needed.
-For the full write-up, see [CASE_STUDY.md](CASE_STUDY.md).
+
 ## Problem
 
 I wanted to understand whether my training before each CrossFit Open aligned with the demands of the workouts I performed well or poorly in.
@@ -46,6 +46,14 @@ The analysis focused on:
 - Better finishes tended to align with rowing, cyclical engine, hinge-dominant work, and gymnastics pulling
 - Worse finishes tended to align with wall walks, inversion, snatch-heavy conditioning, and burpee-to-implement transitions
 - The strongest signal was not raw movement exposure, but how transferable that exposure was to Open-style fatigue and combinations
+
+![Overall rank trend](images/01_overall_rank_trend.png)
+
+![Best and worst Open event deltas](images/02_best_worst_event_deltas.png)
+
+![Event fit vs performance](images/03_event_fit_vs_performance.png)
+
+![Movement exposure correlations](images/04_movement_exposure_correlations.png)
 
 ## Training Recommendations
 
