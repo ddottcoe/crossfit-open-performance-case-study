@@ -1,0 +1,5 @@
+CrossFit Open Performance Case Study
+
+This repo demonstrates how to connect training data and competition outcomes into a practical recommendation.
+The technical value is in feature engineering from messy workout text, joining multiple datasets at different grains,
+and turning exploratory analysis into an actionable training plan.

@@ -1,0 +1,20 @@
+year,workout_code,event_movements,prep_workouts,pct_workouts_touching_any_event_movement,avg_movement_coverage_per_workout,event_fit_score,event_rank,overall_rank,performance_vs_year_rank_pct,performance_label
+2021,21.1,"double_under, wall_walk",7,14.3,7.1,18.2,19875.0,13054,-52.3,worse than year rank
+2021,21.2,"box_jump, burpee, db, snatch",26,19.2,8.7,23.3,24554.0,13054,-88.1,worse than year rank
+2021,21.3,"bar_muscle_up, chest_to_bar, front_squat, thruster, toes_to_bar",47,17.0,3.4,21.5,13993.0,13054,-7.2,worse than year rank
+2021,21.4,"back_squat, bar_muscle_up, chest_to_bar, clean, db, deadlift, front_squat, hspu, pull_up, row, thruster, toes_to_bar",65,61.5,5.5,51.2,14203.0,13054,-8.8,worse than year rank
+2022,22.1,"box_jump, db, snatch, wall_walk",142,30.3,8.6,32.1,31271.0,19510,-60.3,worse than year rank
+2022,22.2,"burpee, deadlift",137,21.9,12.0,18.9,7435.0,19510,61.9,better than year rank
+2022,22.3,"bar_muscle_up, chest_to_bar, double_under, pull_up, thruster",137,13.1,3.1,17.8,29444.0,19510,-50.9,worse than year rank
+2023,23.1,"muscle_up, row, toes_to_bar, wall_ball",93,17.2,5.1,25.0,9904.0,19559,49.4,better than year rank
+2023,23.2,"burpee, pull_up, thruster",78,20.5,7.7,25.2,27428.0,19559,-40.2,worse than year rank
+2023,23.3,"double_under, hspu, wall_walk",70,15.7,5.2,13.6,38961.0,19559,-99.2,worse than year rank
+2024,24.1,"burpee, db, snatch",55,27.3,9.7,22.0,67606.0,39200,-72.5,worse than year rank
+2024,24.2,"deadlift, double_under, row",56,25.0,8.3,21.5,26241.0,39200,33.1,better than year rank
+2024,24.3,"bar_muscle_up, chest_to_bar, pull_up, thruster",58,19.0,6.0,26.4,35725.0,39200,8.9,better than year rank
+2025,25.1,"burpee, db, lunge",45,15.6,6.7,24.9,33014.0,20123,-64.1,worse than year rank
+2025,25.2,"bar_muscle_up, chest_to_bar, double_under, pull_up, thruster",44,20.5,6.4,27.3,15013.0,20123,25.4,better than year rank
+2025,25.3,"clean, deadlift, row, snatch, wall_walk",41,48.8,11.2,40.1,20129.0,20123,-0.0,neutral
+2026,26.1,"box_jump, wall_ball",15,13.3,6.7,25.5,32603.0,24387,-33.7,worse than year rank
+2026,26.2,"chest_to_bar, db, lunge, muscle_up, pull_up, snatch",18,38.9,7.4,47.2,16352.0,24387,32.9,better than year rank
+2026,26.3,"burpee, thruster",20,15.0,7.5,22.6,33977.0,24387,-39.3,worse than year rank

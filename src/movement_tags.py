@@ -1,0 +1,32 @@
+MOVEMENT_KEYWORDS = {
+    "row": ["row", "rowing", "erg"],
+    "run": ["run", "running"],
+    "bike": ["bike", "echo bike", "assault bike", "air bike"],
+    "ski": ["ski", "ski erg", "ski-erg"],
+    "deadlift": ["deadlift", "deadlifts"],
+    "clean": ["clean", "cleans", "power clean", "squat clean"],
+    "snatch": ["snatch", "snatches", "power snatch", "squat snatch"],
+    "thruster": ["thruster", "thrusters"],
+    "wall_ball": ["wall ball", "wall-ball", "wall balls"],
+    "burpee": ["burpee", "burpees"],
+    "double_under": ["double-under", "double under", "double unders", "du"],
+    "box_jump": ["box jump", "box jumps", "box jump-over", "box jump over"],
+    "lunge": ["lunge", "lunges", "walking lunge", "walking lunges"],
+    "pull_up": ["pull-up", "pull up", "pullups", "pull ups"],
+    "chest_to_bar": ["chest-to-bar", "chest to bar", "ctb"],
+    "muscle_up": ["muscle-up", "muscle up", "ring muscle-up", "bar muscle-up"],
+    "toes_to_bar": ["toes-to-bar", "toes to bar", "t2b"],
+    "wall_walk": ["wall walk", "wall walks"],
+    "hspu": ["handstand push-up", "handstand push up", "hspu"],
+    "hsw": ["handstand walk", "handstand walking", "hsw"],
+    "dumbbell": ["dumbbell", "db "],
+}
+
+MOVEMENT_BUCKETS = {
+    "hinge": ["deadlift"],
+    "squat_pattern": ["clean", "thruster", "wall_ball", "lunge", "snatch"],
+    "gymnastics_pulling": ["pull_up", "chest_to_bar", "muscle_up", "toes_to_bar"],
+    "inversion": ["wall_walk", "hspu", "hsw"],
+    "monostructural_engine": ["row", "run", "bike", "ski"],
+    "burpee_transition": ["burpee"],
+}
