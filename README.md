@@ -54,6 +54,7 @@ The analysis focused on:
 ![Event fit vs performance](images/03_event_fit_vs_performance.png)
 
 ![Movement exposure correlations](images/04_movement_exposure_correlations.png)
+This chart shows the directional relationship between pre-Open training exposure and relative Open event performance. Positive values indicate training categories that tended to appear before stronger event finishes, while negative values indicate categories that tended to appear before weaker finishes. The most important takeaway is that raw exposure alone was not enough - some movement categories appeared to transfer well, while others remained weak even when they were present in training.
 
 ## Training Recommendations
 
